@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'users#index'
+
   # Routes for the Message resource:
   # CREATE
   get "/messages/new", :controller => "messages", :action => "new"
