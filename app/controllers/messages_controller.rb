@@ -13,11 +13,12 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new
-    @message.name = params[:name]
-    @message.creator = params[:creator]
-    @message.recipient = params[:recipient]
-    @message.message_content = params[:message_content]
+    @message.creator_id = params[:creator_id]
+    @message.matter_id = params[:matter_id]
+    @message.recipient_id = params[:recipient_id]
     @message.classification = params[:classification]
+    @message.content = params[:content]
+    @message.organization = params[:organization]
 
     if @message.save
       redirect_to "/messages", :notice => "Message created successfully."
@@ -33,11 +34,12 @@ class MessagesController < ApplicationController
   def update
     @message = Message.find(params[:id])
 
-    @message.name = params[:name]
-    @message.creator = params[:creator]
-    @message.recipient = params[:recipient]
-    @message.message_content = params[:message_content]
+    @message.creator_id = params[:creator_id]
+    @message.matter_id = params[:matter_id]
+    @message.recipient_id = params[:recipient_id]
     @message.classification = params[:classification]
+    @message.content = params[:content]
+    @message.organization = params[:organization]
 
     if @message.save
       redirect_to "/messages", :notice => "Message updated successfully."

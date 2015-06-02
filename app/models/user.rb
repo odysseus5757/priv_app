@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
 
-  validates :username, :presence => true, :uniqueness => { :scope => :user_org }
 
+  belongs_to :organization
   has_many :matters
+  has_many :messages
 
 end

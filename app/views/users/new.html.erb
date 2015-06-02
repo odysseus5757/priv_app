@@ -22,33 +22,23 @@
           <!-- Hidden input for authenticity token to protect from forgery -->
           <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-          <!-- Label and input for user_name -->
+          <!-- Label and input for username -->
           <div class="form-group">
-            <label for="user_name" class="col-sm-2 control-label">
-              User name
+            <label for="username" class="col-sm-2 control-label">
+              Username
             </label>
             <div class="col-sm-10">
-              <input type="text" id="user_name" name="user_name" placeholder="User name" class="form-control" value="<%= @user.user_name %>">
+              <input type="text" id="username" name="username" placeholder="Username" class="form-control" value="<%= @user.username %>">
             </div>
           </div>
 
-          <!-- Label and input for user_org -->
+          <!-- Label and input for organization -->
           <div class="form-group">
-            <label for="user_org" class="col-sm-2 control-label">
-              User org
+            <label for="organization" class="col-sm-2 control-label">
+              Organization
             </label>
             <div class="col-sm-10">
-              <input type="text" id="user_org" name="user_org" placeholder="User org" class="form-control" value="<%= @user.user_org %>">
-            </div>
-          </div>
-
-          <!-- Label and input for status -->
-          <div class="form-group">
-            <label for="status" class="col-sm-2 control-label">
-              Status
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="status" name="status" placeholder="Status" class="form-control" value="<%= @user.status %>">
+              <input type="text" id="organization" name="organization" placeholder="Organization" class="form-control" value="<%= @user.organization %>">
             </div>
           </div>
 

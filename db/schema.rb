@@ -11,32 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601211547) do
+ActiveRecord::Schema.define(version: 20150602030121) do
+
+  create_table "classifications", force: :cascade do |t|
+    t.string   "level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "matters", force: :cascade do |t|
     t.string   "name"
-    t.integer  "user_id"
-    t.string   "classification"
-    t.text     "message"
-    t.string   "organization"
+    t.integer  "owner"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "messages", force: :cascade do |t|
+    t.integer  "creator_id"
+    t.integer  "matter_id"
+    t.integer  "recipient_id"
+    t.integer  "classification"
+    t.text     "content"
+    t.integer  "organization"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "organizations", force: :cascade do |t|
     t.string   "name"
-    t.integer  "creator"
-    t.integer  "recipient"
-    t.text     "message_content"
-    t.string   "classification"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "user_name"
-    t.string   "user_org"
-    t.string   "status"
+    t.string   "username"
+    t.integer  "organization"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

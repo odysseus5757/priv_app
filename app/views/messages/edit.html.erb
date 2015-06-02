@@ -22,43 +22,33 @@
           <!-- Hidden input for authenticity token to protect from forgery -->
           <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-          <!-- Label and input for name -->
+          <!-- Label and input for creator_id -->
           <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">
-              Name
-            </label>
-            <div class="col-sm-10">
-              <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @message.name %>">
-            </div>
-          </div>
-
-          <!-- Label and input for creator -->
-          <div class="form-group">
-            <label for="creator" class="col-sm-2 control-label">
+            <label for="creator_id" class="col-sm-2 control-label">
               Creator
             </label>
             <div class="col-sm-10">
-              <input type="text" id="creator" name="creator" placeholder="Creator" class="form-control" value="<%= @message.creator %>">
+              <input type="text" id="creator_id" name="creator_id" placeholder="Creator" class="form-control" value="<%= @message.creator_id %>">
             </div>
           </div>
 
-          <!-- Label and input for recipient -->
+          <!-- Label and input for matter_id -->
           <div class="form-group">
-            <label for="recipient" class="col-sm-2 control-label">
+            <label for="matter_id" class="col-sm-2 control-label">
+              Matter
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="matter_id" name="matter_id" placeholder="Matter" class="form-control" value="<%= @message.matter_id %>">
+            </div>
+          </div>
+
+          <!-- Label and input for recipient_id -->
+          <div class="form-group">
+            <label for="recipient_id" class="col-sm-2 control-label">
               Recipient
             </label>
             <div class="col-sm-10">
-              <input type="text" id="recipient" name="recipient" placeholder="Recipient" class="form-control" value="<%= @message.recipient %>">
-            </div>
-          </div>
-
-          <!-- Label and input for message_content -->
-          <div class="form-group">
-            <label for="message_content" class="col-sm-2 control-label">
-              Message content
-            </label>
-            <div class="col-sm-10">
-              <textarea id="message_content" name="message_content" placeholder="Message content" class="form-control" rows="3"><%= @message.message_content %></textarea>
+              <input type="text" id="recipient_id" name="recipient_id" placeholder="Recipient" class="form-control" value="<%= @message.recipient_id %>">
             </div>
           </div>
 
@@ -69,6 +59,26 @@
             </label>
             <div class="col-sm-10">
               <input type="text" id="classification" name="classification" placeholder="Classification" class="form-control" value="<%= @message.classification %>">
+            </div>
+          </div>
+
+          <!-- Label and input for content -->
+          <div class="form-group">
+            <label for="content" class="col-sm-2 control-label">
+              Content
+            </label>
+            <div class="col-sm-10">
+              <textarea id="content" name="content" placeholder="Content" class="form-control" rows="3"><%= @message.content %></textarea>
+            </div>
+          </div>
+
+          <!-- Label and input for organization -->
+          <div class="form-group">
+            <label for="organization" class="col-sm-2 control-label">
+              Organization
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="organization" name="organization" placeholder="Organization" class="form-control" value="<%= @message.organization %>">
             </div>
           </div>
 

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'users#index'
+  #root 'users#index'
 
   # Routes for the Message resource:
   # CREATE
@@ -17,6 +17,57 @@ Rails.application.routes.draw do
 
   # DELETE
   get "/delete_message/:id", :controller => "messages", :action => "destroy"
+  #------------------------------
+
+  # Routes for the Classification resource:
+  # CREATE
+  get "/classifications/new", :controller => "classifications", :action => "new"
+  post "/create_classification", :controller => "classifications", :action => "create"
+
+  # READ
+  get "/classifications", :controller => "classifications", :action => "index"
+  get "/classifications/:id", :controller => "classifications", :action => "show"
+
+  # UPDATE
+  get "/classifications/:id/edit", :controller => "classifications", :action => "edit"
+  post "/update_classification/:id", :controller => "classifications", :action => "update"
+
+  # DELETE
+  get "/delete_classification/:id", :controller => "classifications", :action => "destroy"
+  #------------------------------
+
+  # Routes for the Organization resource:
+  # CREATE
+  get "/organizations/new", :controller => "organizations", :action => "new"
+  post "/create_organization", :controller => "organizations", :action => "create"
+
+  # READ
+  get "/organizations", :controller => "organizations", :action => "index"
+  get "/organizations/:id", :controller => "organizations", :action => "show"
+
+  # UPDATE
+  get "/organizations/:id/edit", :controller => "organizations", :action => "edit"
+  post "/update_organization/:id", :controller => "organizations", :action => "update"
+
+  # DELETE
+  get "/delete_organization/:id", :controller => "organizations", :action => "destroy"
+  #------------------------------
+
+  # Routes for the User resource:
+  # CREATE
+  get "/users/new", :controller => "users", :action => "new"
+  post "/create_user", :controller => "users", :action => "create"
+
+  # READ
+  get "/users", :controller => "users", :action => "index"
+  get "/users/:id", :controller => "users", :action => "show"
+
+  # UPDATE
+  get "/users/:id/edit", :controller => "users", :action => "edit"
+  post "/update_user/:id", :controller => "users", :action => "update"
+
+  # DELETE
+  get "/delete_user/:id", :controller => "users", :action => "destroy"
   #------------------------------
 
   # Routes for the Matter resource:
@@ -36,22 +87,7 @@ Rails.application.routes.draw do
   get "/delete_matter/:id", :controller => "matters", :action => "destroy"
   #------------------------------
 
-  # Routes for the User resource:
-  # CREATE
-  get "/users/new", :controller => "users", :action => "new"
-  post "/create_user", :controller => "users", :action => "create"
-
-  # READ
-  get "/users", :controller => "users", :action => "index"
-  get "/users/:id", :controller => "users", :action => "show"
-
-  # UPDATE
-  get "/users/:id/edit", :controller => "users", :action => "edit"
-  post "/update_user/:id", :controller => "users", :action => "update"
-
-  # DELETE
-  get "/delete_user/:id", :controller => "users", :action => "destroy"
-  #------------------------------
+  root 'users#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

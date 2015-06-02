@@ -14,10 +14,7 @@ class MattersController < ApplicationController
   def create
     @matter = Matter.new
     @matter.name = params[:name]
-    @matter.user_id = params[:user_id]
-    @matter.classification = params[:classification]
-    @matter.message = params[:message]
-    @matter.organization = params[:organization]
+    @matter.owner = params[:owner]
 
     if @matter.save
       redirect_to "/matters", :notice => "Matter created successfully."
@@ -34,10 +31,7 @@ class MattersController < ApplicationController
     @matter = Matter.find(params[:id])
 
     @matter.name = params[:name]
-    @matter.user_id = params[:user_id]
-    @matter.classification = params[:classification]
-    @matter.message = params[:message]
-    @matter.organization = params[:organization]
+    @matter.owner = params[:owner]
 
     if @matter.save
       redirect_to "/matters", :notice => "Matter updated successfully."

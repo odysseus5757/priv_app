@@ -13,9 +13,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new
-    @user.user_name = params[:user_name]
-    @user.user_org = params[:user_org]
-    @user.status = params[:status]
+    @user.username = params[:username]
+    @user.organization = params[:organization]
 
     if @user.save
       redirect_to "/users", :notice => "User created successfully."
@@ -31,9 +30,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-    @user.user_name = params[:user_name]
-    @user.user_org = params[:user_org]
-    @user.status = params[:status]
+    @user.username = params[:username]
+    @user.organization = params[:organization]
 
     if @user.save
       redirect_to "/users", :notice => "User updated successfully."

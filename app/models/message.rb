@@ -1,9 +1,8 @@
 class Message < ActiveRecord::Base
 
-  validates :name, :presence => true, :uniqueness => { :scope => :matter}
-
-  has_many :users
   belongs_to :matter
-  has_many :classifications
+  belongs_to :user
+  belongs_to :organization
+  belongs_to :classification
 
 end

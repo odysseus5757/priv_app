@@ -10,20 +10,23 @@
         <div class="row">
           <div class="col-md-12">
             <dl class="dl-horizontal">
-              <dt>Name</dt>
-              <dd><%= @message.name %></dd>
-
               <dt>Creator</dt>
-              <dd><%= @message.creator %></dd>
+              <dd><%= @message.creator_id %></dd>
+
+              <dt>Matter</dt>
+              <dd><%= @message.matter_id %></dd>
 
               <dt>Recipient</dt>
-              <dd><%= @message.recipient %></dd>
-
-              <dt>Message content</dt>
-              <dd><%= @message.message_content %></dd>
+              <dd><%= @message.recipient_id %></dd>
 
               <dt>Classification</dt>
               <dd><%= @message.classification %></dd>
+
+              <dt>Content</dt>
+              <dd><%= @message.content %></dd>
+
+              <dt>Organization</dt>
+              <dd><%= @message.organization %></dd>
 
             </dl>
             <div class="btn-group btn-group-justified">

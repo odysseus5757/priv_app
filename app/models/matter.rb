@@ -1,7 +1,6 @@
 class Matter < ActiveRecord::Base
 
-  validates :name, :presence => true, :uniqueness => { :scope => :organization}
-
-  belongs_to :user_name
+  belongs_to :user
+  has_many :messages
 
 end
